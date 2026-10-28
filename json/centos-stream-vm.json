@@ -1,0 +1,51 @@
+{
+  "name": "CentOS Stream",
+  "slug": "centos-stream-vm",
+  "categories": [
+    2
+  ],
+  "date_created": "2026-10-28",
+  "type": "vm",
+  "updateable": false,
+  "privileged": false,
+  "architectures": [
+    "amd64"
+  ],
+  "interface_port": null,
+  "documentation": "https://docs.centos.org/en-US/stream/",
+  "website": "https://www.centos.org/centos-stream/",
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/centos.webp",
+  "description": "CentOS Stream 10 or 9, imported from official GenericCloud QCOW2 images with mandatory Cloud-Init.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "vm/centos-stream-vm.sh",
+      "config_path": "",
+      "resources": {
+        "cpu": 2,
+        "ram": 2048,
+        "hdd": 15,
+        "os": null,
+        "version": null
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Choose CentOS Stream 10 (default) or 9 during setup or set VM_OS_VERSION=10 or VM_OS_VERSION=9 when unattended.",
+      "type": "info"
+    },
+    {
+      "text": "Cloud-Init is required to configure credentials and initial guest networking. The image's default user is cloud-user; select a password or SSH key during setup.",
+      "type": "info"
+    },
+    {
+      "text": "The script downloads a current official CentOS GenericCloud image and checks its SHA-256 checksum, including cached images.",
+      "type": "info"
+    }
+  ]
+}
